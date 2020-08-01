@@ -10,7 +10,7 @@ const controller = new ScrollMagic.Controller();
 
 //Scenes
 let scene = new ScrollMagic.Scene({
-  duration: 5000, //영상 길이 (ms 단위). scrollPosition이 이동할 총 길이를 나타내기도 함.
+  duration: 17000, //영상 길이 (ms 단위). scrollPosition이 이동할 총 길이를 나타내기도 함.
   triggerElemnt: intro,
   triggerHook: 0, //unpin이나 뭔가를 끝내고 싶은 지점의 비율을 나타냄. 0~1까지
 })
@@ -22,7 +22,7 @@ let scene = new ScrollMagic.Scene({
 const textAnim = TweenMax.fromTo(text, 5, { opacity: 1 }, { opacity: 0 });
 
 let scene2 = new ScrollMagic.Scene({
-  duration: 10000,
+  duration: 8000,
   triggerElement: intro,
   triggerHook: 0,
 })
@@ -43,6 +43,8 @@ scene.on("update", (e) => {
 setInterval(() => {
   delay += (scrollpos - delay) * accelamount;
   video.currentTime = delay;
-  console.log(scrollpos, delay);
-  //   video.currentTime = scrollpos;
-}, 41.7); //interval 시간은 1000 / fps 값을 해주면 자연스러울 것임;
+  // console.log(scrollpos, delay);
+  // video.currentTime = scrollpos;
+}, 41.7);
+
+//interval 시간은 1000 / fps 값을 해주면 자연스러울 것임;
